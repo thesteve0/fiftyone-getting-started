@@ -1,0 +1,60 @@
+{
+	"name": "FiftyOne Workspace",
+	"image": "ghcr.io/thesteve0/fiftyone-wkshp-container:latest",
+    // Uncomment if you want a particular file opened on start
+    //    "codespaces": {
+    //    "openFiles": [
+	//    "README.md"
+    //     ]
+    //   },
+	"customizations": {
+		"jetbrains": {
+			"settings": {
+				"com.intellij:app:EditorSettings.soft_wrap_file_masks": "*.md; *.txt; *.rst; *.adoc,*.json , *.asciidoc",
+				"com.intellij:app:EditorSettings.custom_soft_wrap_indent": 3,
+				"com.intellij:app:GeneralSettings.autoSaveIfInactive": true,
+				"org.jetbrains.plugins.github:app:GithubSettings.clone_git_using_ssh": true,
+				"com.intellij:app:HttpConfigurable.use_proxy_pac": true,
+				"com.intellij:app:BaseRefactoringSettings.safe_delete_when_delete": false,
+				"com.intellij:app:BaseRefactoringSettings.rename_search_in_comments_for_file": false,
+				"com.intellij:app:BaseRefactoringSettings.rename_search_for_references_for_file": false
+			}
+		}
+	},
+
+        // Set *default* container specific settings.json values on container create.
+//    "settings": {
+//        "terminal.integrated.shell.linux": "/bin/bash",
+//    	"python.defaultInterpreterPath": "/opt/.fiftyone-venv/bin/python",
+//	"python.linting.enabled": true,
+//	"python.linting.pylintEnabled": true,
+//	"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+//	"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+//	"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+//	"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+//	"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+//	"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+//	"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+//	"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+//	"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+//	"python.linting.pylintArgs": [
+//		"--disable=C0111"
+//	]
+//
+//
+//    },
+//	"extensions": [
+//	"ms-python.python",
+//	"ms-python.vscode-pylance",
+//        "ms-python.debugpy",
+//	"GitHub.github-vscode-theme",
+//        "ms-python.isort",
+//        "ms-toolsai.jupyter",
+//        "ms-toolsai.vscode-jupyter-cell-tags",
+//        "ms-toolsai.jupyter-keymap",
+//        "ms-toolsai.jupyter-renderers",
+//        "ms-toolsai.vscode-jupyter-slideshow"
+//	],
+	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
+
+}
