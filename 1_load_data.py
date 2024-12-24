@@ -10,14 +10,23 @@ https://docs.voxel51.com/user_guide/dataset_creation/index.html
 
 # https://docs.voxel51.com/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset
 
-dataset = foz.load_zoo_dataset("caltech101", persistent=True, overwrite=True)
+dataset = foz.load_zoo_dataset("quickstart", persistent=True)
 
+print("Current datasets: " + str(fo.list_datasets()))
 print("just plain print: " + str(dataset) + "\n\n")
 print("Same as a summary: " + dataset.summary() + "\n\n")
+
+if "cloned" in fo.list_datasets():
+    fo.delete_dataset("cloned")
 
 clone_dataset = dataset.clone("cloned")
 print("Current datasets: " + str(fo.list_datasets()))
 
-sample = dataset.get_first()
+print("Number of samples: " + str(dataset.count()))
+
+print("Dataset schema: " + str(dataset.get_field_schema()))
+
+sample = dataset.first()
+sample.field_names
 
 print("Done with API intro")
