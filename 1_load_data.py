@@ -16,10 +16,6 @@ print("Current datasets: " + str(fo.list_datasets()))
 print("just plain print: " + str(dataset) + "\n\n")
 print("Same as a summary: " + dataset.summary() + "\n\n")
 
-if "cloned" in fo.list_datasets():
-    fo.delete_dataset("cloned")
-
-clone_dataset = dataset.clone("cloned")
 print("Current datasets: " + str(fo.list_datasets()))
 
 print("Number of samples: " + str(dataset.count()))
@@ -29,4 +25,27 @@ print("Dataset schema: " + str(dataset.get_field_schema()))
 sample = dataset.first()
 sample.field_names
 
+# To show non-persistence without a save run this file again but comment out the next line
+# Or open a python terminal load the same dataset and then see what the value is for .first()
+sample["steve_field"] = True
+sample.save()
+
+print("Tried to add steve_field - Dataset schema: " + str(dataset.get_field_schema()))
+
+dataset.add_sample_field("general_field", fo.ListField, subfield=fo.StringField)
+
+# Fields are strongly typed. To see the error, uncomment this line and run again
+# sample2 = dataset.last()
+# sample2["steve_field"] = 2
+
+print("Tried to add general_field - Dataset schema: " + str(dataset.get_field_schema()))
+
+# Now views versus cloned datasets
+dataset_view = dataset.view()
+if "cloned" in fo.list_datasets():
+    fo.delete_dataset("cloned")
+
+clone_dataset = dataset.clone("cloned")
+
+##### TODO make some changes to schema or value in the view and see how things change. Same does not happen in a clone
 print("Done with API intro")
