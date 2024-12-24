@@ -17,3 +17,7 @@ print("Same as a summary: " + dataset.summary() + "\n\n")
 
 clone_dataset = dataset.clone("cloned")
 print("Current datasets: " + str(fo.list_datasets()))
+
+sample = dataset.get_first()
+
+print("Done with API intro")
