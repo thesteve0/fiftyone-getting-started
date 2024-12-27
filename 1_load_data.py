@@ -48,4 +48,25 @@ if "cloned" in fo.list_datasets():
 clone_dataset = dataset.clone("cloned")
 
 ##### TODO make some changes to schema or value in the view and see how things change. Same does not happen in a clone
+# you can not alter the dataset schema through the view. Ucomment to see the error
+# dataset_view.add_sample_field("on_the_view", fo.IntField)
+
+# But you can change sample data values through the view just like a dataset
+# It has SOME of the same methods and properties. It can also be used in place of a dataset in some use cases.
+# We will cover them a bit later. JUst be careful when you do operations that can change values
+# Datasets are lightweight - get used to using clones
+
+dsview_sample = dataset_view.first()
+dsview_sample["general_field"] = ["dataset field updated through view"]
+dsview_sample.save()
+
+
+cloned_sample = clone_dataset.first()
+cloned_sample["general_field"] = ["cloned sample field"]
+cloned_sample.save()
+
+print("Dataset first: " + str(dataset.first()["general_field"]) + "\n\n")
+print("Now Cloned Dataset first: " + str(clone_dataset.first()["general_field"]) + "\n\n")
+
+
 print("Done with API intro")
