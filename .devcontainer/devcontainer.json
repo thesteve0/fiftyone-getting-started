@@ -56,5 +56,11 @@
         "ms-toolsai.vscode-jupyter-slideshow"
 	],
 	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
+	"postCreateCommand": {
+	    "1": "mkdir /photos",
+	    "2": "cd /photos",
+	    "3": "wget https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip",
+	    "4": "unzip -j downloads.zip"
+	}
 
 }
