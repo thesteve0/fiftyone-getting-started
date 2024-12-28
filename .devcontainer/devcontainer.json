@@ -57,8 +57,8 @@
 	],
 	"onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
 	"postCreateCommand": {
-	    "1": "wget -P /photos wget https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip",
-	    "2": "unzip -j /photos/downloads.zip -d /photos"
-	}
+	    "1": "wget -P /photos wget https://github.com/thesteve0/fiftyone-getting-started/releases/download/v.data/downloads.zip"
+	},
+	"postStartCommand": "unzip -j /photos/downloads.zip -d /photos"
 
 }
