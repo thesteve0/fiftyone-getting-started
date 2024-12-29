@@ -31,17 +31,15 @@ fob.compute_visualization(dataset, embeddings="default_embed", brain_key="defaul
 
 # Trained on 400 Million image text pairs from the internet
 model = foz.load_zoo_model("open-clip-torch")
-
 fob.compute_visualization(dataset, model=model, embeddings="open_clip_embed",
                               brain_key="openclip_embed")
 
-# Based on a DETR model trainied on 
+# Based on a DETR model trainied on COCOA Data
 model2 = foz.load_zoo_model("detection-transformer-torch")
 fob.compute_visualization(dataset, model=model2, embeddings="det_transformer", brain_key="det_ransformer")
 
 # trained on imagenet
 # model2 = foz.load_zoo_model("mnasnet0.5-imagenet-torch")
-
 # fob.compute_visualization(dataset, model=model2, embeddings="mnasnet_embed",
                             #   brain_key="mnasnet_embed")
 
