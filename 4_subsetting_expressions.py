@@ -28,6 +28,9 @@ full_photos = fo.load_dataset("photos")
 if Dataset.dataset_exists("random_clone_subset"):
     fo.delete_dataset("random_clone_subset")
 random_clone_subset = full_photos.shuffle(seed=0.5).limit(300).clone("random_clone_subset", persistent = True)
+
+# We can't use the 2d representations from the entire dataset because the coordinates are dependent on the samples used during dimension reduction.
+# Since we now only have a subset of the embeddings, the 2d coordinates will change.
 fob.compute_visualization(random_clone_subset, embeddings="open_clip_embed", brain_key="random_clip_embed")
 
 # Now let's actually subset using uniqueness and representativeness 
