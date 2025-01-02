@@ -92,7 +92,7 @@ label_expr = (
     F("$tags").switch(
         {
             ( F() != []): F("$tags")[0],
-            (F() == []) & F("$prediction.label") == "without any people": "no people",
+            ( F("$prediction.label") == "without any people"): "no people",
         },
 	    default="people"
     )
@@ -101,3 +101,19 @@ label_expr = (
 dataset.set_field("ground_truth.label", label_expr).save()
 
 ```
+
+If you want to see the final dataset it is available on [HuggingFace](https://huggingface.co/datasets/Voxel51/getting-started-labeled-photos). 
+
+It is simple to load and visualize here:
+
+```Python
+
+from fiftyone.utils.huggingface import load_from_hub
+
+final_dataset = load_from_hub("Voxel51/getting-started-labeled-photos", persistent=True, name="training_data")
+
+session.dataset = final_dataset
+
+```
+
+Time to fine tune a model
