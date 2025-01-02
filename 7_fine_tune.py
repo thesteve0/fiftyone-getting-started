@@ -82,6 +82,7 @@ def train_classifier(
         device=get_torch_device(),
         batch = 16,
         project=project_name,
+        exist_ok=True  # Allow the output to overwrite previous model runs
     )
 
     return model
