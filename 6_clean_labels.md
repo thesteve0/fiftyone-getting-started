@@ -116,4 +116,6 @@ session.dataset = final_dataset
 
 ```
 
+I also used a similar to technique to provide ground truth to our validation set. This will be helpful when we go to evaluate model effectiveness. It is also in HuggingFace but we will load it when we go to evaluate our models. 
+
 Time to fine tune a model
