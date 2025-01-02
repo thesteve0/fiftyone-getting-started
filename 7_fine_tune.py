@@ -10,7 +10,7 @@ since that would take too long. This is here for when you want to see this later
 """
 
 DATASET_NAME = 'training_data'
-DEFAULT_MODEL_SIZE = "m"
+DEFAULT_MODEL_SIZE = "s"
 DEFAULT_IMAGE_SIZE = 320
 DEFAULT_EPOCHS = 5
 PROJECT_NAME = 'fine-tuning-yolo'
@@ -38,7 +38,6 @@ def train_classifier(
         **kwargs
 ):
 
-    # settings.update({"wandb": False})
     if dataset_name:
         dataset = fo.load_dataset(dataset_name)
         dataset.take(0.2 * len(dataset)).tag_samples("test")
@@ -81,6 +80,7 @@ def train_classifier(
         epochs=epochs,  # Number of epochs
         imgsz=image_size,  # Image size
         device=get_torch_device(),
+        batch = 16,
         project=project_name,
     )
 
