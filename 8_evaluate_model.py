@@ -13,7 +13,7 @@ I have already added the ground truth to the data so we can evaluate model perfo
 """
 
 # This will point to the model we trained in the previous step
-model = YOLO("yolov8s-seg.pt")
+model = YOLO("./fine-tuning-yolo/train/weights/best.pt")
 
 
 
