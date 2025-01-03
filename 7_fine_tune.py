@@ -10,9 +10,9 @@ since that would take too long. This is here for when you want to see this later
 """
 
 DATASET_NAME = 'training_data'
-DEFAULT_MODEL_SIZE = "s"
-DEFAULT_IMAGE_SIZE = 320
-DEFAULT_EPOCHS = 5
+DEFAULT_MODEL_SIZE = "m"
+DEFAULT_IMAGE_SIZE = 640
+DEFAULT_EPOCHS = 10
 PROJECT_NAME = 'fine-tuning-yolo'
 
 
