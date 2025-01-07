@@ -30,7 +30,7 @@ Things to do
 4. Lightning = indexed field. To turn off toggle query performance mode
 5. Filter gear
 6. Change color schemes
-7. Plugins - image quality
+7. Plugins - image quality - There is a teams feature that does this and more https://docs.voxel51.com/teams/data_quality.html
 8. Plugins - build a dashboard
 
 
