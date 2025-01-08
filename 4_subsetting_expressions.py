@@ -44,6 +44,5 @@ if Dataset.dataset_exists("validation_photos"):
     fo.delete_dataset("validation_photos")
 final_validation = full_photos.exclude_by("filepath", unique_repr_clone_subset.values("filepath")).clone("validation_photos", persistent=True)
 
-### TODO may want to add some command line playing with selections and having them update in the app
 session = fo.launch_app()
 session.wait()

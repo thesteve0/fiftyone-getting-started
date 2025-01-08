@@ -12,7 +12,7 @@ teach us about our data.
 PHOTO_DIR = "/photos"
 DATASET_NAME = "photos"
 
-# downloaded 443 public domain images from fickr, just images with no metadata. Load the data using the "directory of images" importer
+# downloaded 443 public domain images from flickr, just images with no metadata. Load the data using the "directory of images" importer
 # https://docs.voxel51.com/user_guide/dataset_creation/datasets.html#imagedirectory-import
 
 dataset = fo.Dataset.from_dir(

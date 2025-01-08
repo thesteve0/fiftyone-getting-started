@@ -16,7 +16,6 @@ working_dataset = dataset.clone(name="predicted_labels", persistent=True)
 
 clip = foz.load_zoo_model(
         "open-clip-torch",
-#        image_size = [448],
         text_prompt="A photo ",
         classes= ["with a man", "with a woman", "with people", "without any people"])
         #classes= ["a person", "people", "no people"])
