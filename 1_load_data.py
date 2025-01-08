@@ -29,7 +29,6 @@ sample = dataset.first()
 print(str(sample.field_names) + "\n\n")
 
 # To show non-persistence without a save run this file again but comment out the next line
-# Or open a python terminal load the same dataset and then see what the value is for .first()
 sample["steve_field"] = True
 
 print(str(sample.field_names) + "\n\n")
