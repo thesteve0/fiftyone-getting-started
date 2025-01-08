@@ -50,7 +50,7 @@ dataset_view = dataset.view()
 if "cloned" in fo.list_datasets():
     fo.delete_dataset("cloned")
 
-clone_dataset = dataset.clone("cloned")
+clone_dataset = dataset.clone("cloned", persistent=True)
 
 ##### TODO make some changes to schema or value in the view and see how things change. Same does not happen in a clone
 # you can not alter the dataset schema through the view. Ucomment to see the error
