@@ -10,28 +10,33 @@ https://docs.voxel51.com/user_guide/dataset_creation/index.html
 
 # https://docs.voxel51.com/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset
 
-print("Current datasets: " + str(fo.list_datasets()))
+print("Current datasets: " + str(fo.list_datasets())+ "\n\n")
 
+# Let's start by loading a zoo dataset
+# https://docs.voxel51.com/dataset_zoo/datasets.html
 dataset = foz.load_zoo_dataset("quickstart", persistent=True)
 
 print("just plain print: " + str(dataset) + "\n\n")
 print("Same as a summary: " + dataset.summary() + "\n\n")
 
-print("Current datasets: " + str(fo.list_datasets()))
+print("Current datasets: " + str(fo.list_datasets()) + "\n\n")
 
-print("Number of samples: " + str(dataset.count()))
+print("Number of samples: " + str(dataset.count()) + "\n\n")
 
-print("Dataset schema: " + str(dataset.get_field_schema()))
+print("Dataset schema: " + str(dataset.get_field_schema()) + "\n\n")
 
 sample = dataset.first()
-sample.field_names
+print(str(sample.field_names) + "\n\n")
 
 # To show non-persistence without a save run this file again but comment out the next line
 # Or open a python terminal load the same dataset and then see what the value is for .first()
 sample["steve_field"] = True
+
+print(str(sample.field_names) + "\n\n")
+
 sample.save()
 
-print("Tried to add steve_field - Dataset schema: " + str(dataset.get_field_schema()))
+print("Tried to add steve_field - Dataset schema: " + str(dataset.get_field_schema()) + "\n\n")
 
 dataset.add_sample_field("general_field", fo.ListField, subfield=fo.StringField)
 
@@ -39,7 +44,7 @@ dataset.add_sample_field("general_field", fo.ListField, subfield=fo.StringField)
 # sample2 = dataset.last()
 # sample2["steve_field"] = 2
 
-print("Tried to add general_field - Dataset schema: " + str(dataset.get_field_schema()))
+print("Tried to add general_field - Dataset schema: " + str(dataset.get_field_schema()) + "\n\n")
 
 # Now views versus cloned datasets
 dataset_view = dataset.view()
