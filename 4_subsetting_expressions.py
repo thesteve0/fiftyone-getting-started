@@ -33,7 +33,7 @@ random_clone_subset = full_photos.shuffle(seed=0.5).limit(300).clone("random_clo
 # Since we now only have a subset of the embeddings, the 2d coordinates will change.
 fob.compute_visualization(random_clone_subset, embeddings="open_clip_embed", brain_key="random_clip_embed")
 
-# Now let's actually subset using uniqueness and representativeness 
+# Now let's actually subset using uniqueness and representativeness. These are the ones we will use for fine tuning 
 if Dataset.dataset_exists("unique_repr_clone_subset"):
     fo.delete_dataset("unique_repr_clone_subset")
 unique_repr_clone_subset = full_photos.match((F("representativeness") > 0.5) & (F("uniqueness") > 0.5)).limit(300).clone("unique_repr_clone_subset", persistent = True)
