@@ -37,6 +37,8 @@ sample = dataset[session.selected[0]]
 sample
 
 # Now we can select a sample from the code and have it show up in the UI
+# NOTE: UUIDs for images are not persistent between dataset loads. Each time you create the sample it will get a new 
+# UUID. Therefore, this UUID will not work. Go grab another UUID from the image and paste it here
 session.select_samples(["6773012fa08cade6ec7e44e1"])
 # Go look in the app
 

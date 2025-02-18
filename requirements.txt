@@ -1,1 +1,1 @@
-fiftyone~=1.2.0
+fiftyone~=1.3.0
